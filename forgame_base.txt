@@ -1,0 +1,72 @@
+# This is a blueprint file for the game. It is not a complete game yet. It is just a basic structure for the game. The game will be a text-based adventure game. 
+# The player will be able to move around the house and interact with objects soon. The player will have a limited number of moves before they die.
+# The player will have to find a way to escape the house before they run out of moves.
+# \n
+
+import time
+
+# CONFIGURATION
+
+# UTILITY AESTHETICS
+
+# MAIN MENU
+
+def main_menu():
+    print("Hello.")
+    input("Press Enter to continue.")
+    print("Thank you for choosing my game! Please wait while the game is loading...")
+
+    for i in range(0, 2): 
+        print("Loading..." , i + 1)
+        time.sleep(1)
+        continue
+
+    print("Your game is ready!")
+
+    while True:
+        name = input("Create your username to continue: ")
+        if name == "":
+            print("Invalid credentials. Please try again.")
+        else:
+            print(f"Welcome to the world,", name, "!")
+            input("Press Enter to Play the game.")
+
+            print("This game design was done by\nCharles J. So")
+
+        for i in range(0, 3):
+            print("Loading...", i)
+            print("This might take a while...")
+            time.sleep(2)
+            print("You are now playing as:", name)
+            continue
+main_menu()
+
+movt = 3                 # Total moves allowed
+        health = 0               # Moves counter in every turn
+        while health < movt:
+            health += 1
+            inventory = []
+            print(f"You spawned in your house. You currently have:, {inventory}, in your inventory.")
+            move = input("You are in your bedroom. Where do you want to go?\nA. Living Room B. Kitchen C. Bathroom D. Garage: \n")
+            if move == "A":
+                print("You went to the Living Room. Sit on the couch?")
+            elif move == "B":
+                 print("You went to the Kitchen. You can't even cook. Where do you want to go?")
+            elif move == "C":
+                 print("You went to the Bathroom. What do you want to do here?")
+            elif move == "D":
+                 print("You went to the Garage.")
+            elif movt >= health:
+                print("You died. You lost the game.")    
+                break        
+
+def game_base():
+    pass
+
+def entry_point():
+   pass
+
+def final_point():
+        print("Narrator: Congratulations! You have successfully escaped the house!") 
+
+
